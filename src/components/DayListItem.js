@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 const formatSpots = function(props) {
   let formatedSpots = "";
-  
+
   if(props.spots === 0) {
     formatedSpots = "no spots remaining";
   }
@@ -32,4 +32,4 @@ export default function DayListItem(props) {
       <h3 className="text--light">{formatSpots(props)}</h3>
     </li>
   );
-}
+};
