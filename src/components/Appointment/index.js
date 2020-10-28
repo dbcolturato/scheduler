@@ -6,7 +6,7 @@ import Show from "components/Appointment/Show";
 
 export default function Appointment(props) {
   return (
-    <section class="appointment">
+    <section className="appointment">
       <Header time={props.time} />
       { props.interview
         ? <Show student={props.interview.student} interviewer={props.interview.interviewer} />
