@@ -3,6 +3,11 @@ export function getAppointmentsForDay(state, day) {
   return dayObj ? dayObj.appointments.map(a => state.appointments[a]) : [];
 }
 
+export function getInterviewersForDay(state, day) {
+  const dayObj = state.days.find(d => d.name === day);
+  return dayObj ? dayObj.interviewers.map(i => state.interviewers[i]) : [];
+}
+
 export function getInterview(state, interview) {
 
   return (
