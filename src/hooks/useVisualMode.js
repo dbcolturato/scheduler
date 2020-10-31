@@ -7,19 +7,20 @@ export default function useVisualMode(initial) {
   function transition(newMode, replace = false) {
     setMode(newMode);
     if (replace) {
-      const newHistory = history.slice();
-      newHistory[newHistory.length - 1] = newMode;
-      setHistory(newHistory);
+      setHistory(prev => {
+        const newHistory = prev.slice();
+        newHistory[newHistory.length - 1] = newMode;
+        return newHistory;
+      });
     } else {
-      setHistory(history.concat([newMode]));
+      setHistory(prev => prev.concat([newMode]));
     }
   }
 
   function back() {
     if (history.length > 1) {
-      const newHistory = history.slice(0, history.length - 1);
-      setHistory(newHistory);
-      setMode(newHistory[newHistory.length - 1]);
+      setHistory(prev => prev.slice(0, prev.length - 1));
+      setMode(history[history.length - 2]);
     }
   }
 

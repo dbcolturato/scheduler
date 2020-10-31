@@ -28,8 +28,18 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment
     };
+    const days = state.days.map(d => {
+      if (d.appointments.find(a => a === id)) {
+        return {
+          ...d,
+          spots: d.spots - 1
+        }
+      }
+      return d;
+    })
+    
     return axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
-      .then(() => setState({ ...state, appointments }));
+      .then(() => setState({ ...state, appointments, days }));
   }
 
   function cancelInterview(id) {
@@ -41,8 +51,19 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment
     };
+
+    const days = state.days.map(d => {
+      if (d.appointments.find(a => a === id)) {
+        return {
+          ...d,
+          spots: d.spots + 1
+        }
+      }
+      return d;
+    })
+
     return axios.delete(`http://localhost:8001/api/appointments/${id}`)
-      .then(() => setState({ ...state, appointments }));
+      .then(() => setState({ ...state, appointments, days }));
   }
 
   const setDay = day => setState({ ...state, day });
