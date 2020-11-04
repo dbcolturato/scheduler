@@ -1,23 +1,32 @@
 # Interview Scheduler
 
+Interview Scheduler is a React application that allows users to book and cancel interviews. It combines a concise API with a WebSocket server.
+
 ## Setup
 
-Install dependencies with `npm install`.
+Install dependencies with `npm install` command.
 
 ## Running Webpack Development Server
 
-```sh
-npm start
-```
+Start the web server using the `npm start` command. The app will be served at <http://localhost:8000/>.
 
 ## Running Jest Test Framework
 
-```sh
-npm test
-```
+Start the Jest Test Framework using the `npm test` command.
 
 ## Running Storybook Visual Testbed
 
-```sh
-npm run storybook
-```
+Start the Storybook using the `npm run storybook` command.
+
+## Final Product
+
+!["Interview Scheduler main page"](https://github.com/dbcolturato/tweeter/blob/master/docs/Tweets-small-screen.png?raw=true)
+!["Interview Scheduler add new appointment page"](https://github.com/dbcolturato/tweeter/blob/master/docs/Tweets-large-screen.png?raw=true)
+!["Interview Scheduler edit or delete appointment page"](https://github.com/dbcolturato/tweeter/blob/master/docs/Tweets-large-screen.png?raw=true)
+!["Interview Scheduler delete confirmation page"](https://github.com/dbcolturato/tweeter/blob/master/docs/Tweets-large-screen.png?raw=true)
+
+## Dependencies
+
+- axios
+- @testing-library/react-hooks
+- react-test-renderer

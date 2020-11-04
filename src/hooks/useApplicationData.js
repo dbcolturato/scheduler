@@ -37,7 +37,7 @@ export default function useApplicationData(props) {
       }
       return d;
     })
-    
+
     return axios.put(`/api/appointments/${id}`, appointment)
       .then(() => setState({ ...state, appointments, days }));
   }
@@ -67,6 +67,6 @@ export default function useApplicationData(props) {
   }
 
   const setDay = day => setState({ ...state, day });
-  
+
   return { state, setDay, bookInterview, cancelInterview };
 };
