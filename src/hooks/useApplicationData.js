@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
+//responsible for loading the initial data from the API, 
+//and when any of the provided actions are called the state updates, causing the component to render.
 export default function useApplicationData(props) {
   const [state, setState] = useState({
     day: "Monday",
